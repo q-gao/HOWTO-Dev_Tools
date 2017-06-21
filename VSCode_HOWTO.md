@@ -4,6 +4,7 @@
 
 - [Visual Studio Code HOWTO](#visual-studio-code-howto)
     - [Concepts](#concepts)
+        - [Partial string/command match](#partial-stringcommand-match)
         - [Extension](#extension)
     - [Common Shortcuts](#common-shortcuts)
         - [Editing](#editing)
@@ -15,13 +16,19 @@
 
 ## Concepts
 
+Like Tublime Text
+
+### Partial string/command match
+E.g., `ext ins` will match **Ext**ensions:**Ins**tall Extensions
+
 ### Extension
 
-`ext install python`
+Type `ext install python` in command palette
 
 ## Common Shortcuts
 
-Like sublime text
+
+[Shortcut Reference Page](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)
 
 ### Editing
 
@@ -33,5 +40,5 @@ Block selection & multiple caret | `CTRL+ALT+UP` <br> `CTRL+ALT+DOWN`
 
 Purpose  |  Shortcut
 ---------|----------
-Show Tool Palette | `CTRL+P`
-Show Tool Palette(?) | `CTRL+SHIFT+P`
+Go to File/Quick Open | `CTRL+P`
+Show Tool Palette | `CTRL+SHIFT+P`
