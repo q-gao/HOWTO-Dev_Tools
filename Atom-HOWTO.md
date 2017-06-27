@@ -5,9 +5,11 @@ Show Welcome screen with help info:
 ## Shortcuts
 Shortcut | Description
 ---------|------------
-`CTRL+\` |show directory tree
 `CTRL+SHIFT+p` |show command palette
+`CTRL+\` |show project folders
+`CTRL+SHIFT+A` |Add project folder
 `CTRL+SHIFT+m` |show the rendered HTML markdown to the right
+`CTRL+enter` |commit
 
 ### GUI Shortcuts
 Shortcut | Description
