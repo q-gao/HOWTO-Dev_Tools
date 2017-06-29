@@ -15,7 +15,7 @@ Shortcut | Description
 Shortcut | Description
 ---------|------------
 `CTRL+SHIFT+9` |Toggle git tab
-`CTRL+SHIFT+p` + `menu` |Toggle menu bar
+`CTRL+SHIFT+p` + `menu` <br> or `ALT`|Toggle menu bar
 
 
 ## Packages

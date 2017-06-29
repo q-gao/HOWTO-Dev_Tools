@@ -1,5 +1,19 @@
 # Text Processing Tools
 
+## grep
+```sh
+# ^: begining of line
+grep --after-context=1 "^>" t.ecsim
+```
+will generate the followings:
+```
+>120  0 0 0   0 3   -3   10   20  0  0  0 # test
+ 120 0 0 0 0 3  -3 10 20 0 0 0
+--
+>120  0 0 1 400 3  800  900 -750  0  0  0 # trigger freq search
+ 120 0 0 1 400 3  800 900 -750 0 0 0
+--
+```
 ## sed
 
 ![sed workflow](https://www.tutorialspoint.com/sed/images/sed_workflow.jpg)
