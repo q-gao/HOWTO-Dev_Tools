@@ -1,19 +1,54 @@
 # Text Processing Tools
 
 ## grep
+
+grep search PATTERN in to-be-searched FILES and OUTPUT
+`grep --help` is fairly easy to read.
+
+### PATTERN: Regular expression
+
+By default, grep uses Basic Regular expression(BRE). Use `-E` to use Extended RE(ERE)
+
+
 ```sh
 # ^: begining of line
-grep --after-context=1 "^>" t.ecsim
+grep -A1 "^>" t.ecsim
 ```
-will generate the followings:
+
+### Specify to-be-searched file
+
+```sh
+# grep "*.m" files (-r recursive. It is == "-d recurse");
+grep -r --include="*.m" "Touch Velocity" *
 ```
->120  0 0 0   0 3   -3   10   20  0  0  0 # test
- 120 0 0 0 0 3  -3 10 20 0 0 0
---
->120  0 0 1 400 3  800  900 -750  0  0  0 # trigger freq search
- 120 0 0 1 400 3  800 900 -750 0 0 0
---
+
+### OUTPUT
+
+#### Context Control
+Output context = leading and trailing context
+
 ```
+Context control:
+  -B, --before-context=NUM  print NUM lines of leading context
+  -A, --after-context=NUM   print NUM lines of trailing context
+  -C, --context=NUM         print NUM lines of output context
+  -NUM                      same as --context=NUM
+```
+`-A1` or `-A 1` is the same as `--after-context=1`
+
+#### Process Matched files
+`-ls` list matched files
+
+##### `-exec`
+
+```sh
+#find will execute grep and will substitute {} with the filename(s) found.
+#';': a single grep command for each file is executed
+find . -exec grep chrome {} \;
+#'+':  as many files as possible are given as parameters to grep at once.
+find . -exec grep chrome {} +
+```
+
 ## sed
 
 ![sed workflow](https://www.tutorialspoint.com/sed/images/sed_workflow.jpg)
