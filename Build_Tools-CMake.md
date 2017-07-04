@@ -15,16 +15,27 @@ Good Tutorial
 - CMake Variables: https://stackoverflow.com/questions/31037882/whats-the-cmake-syntax-to-set-and-use-variables
 
 ## Concepts
+
+### Targets
+
+A CMake-based buildsystem is organized as a set of high-level logical targets. Each target corresponds to an executable or library, or is a custom target containing custom commands.
+
+### Stages
+
+- [**Stages**](http://cgold.readthedocs.io/en/latest/tutorials/cmake-stages.html):
+  - [Configure step](http://cgold.readthedocs.io/en/latest/tutorials/cmake-stages.html#configure-step): parse top level `CMakeLists.txt` of source tree and create **CMakeCache.txt** file with cache variables. For CMake command-line this step is combined with generate step so terms configure and generate will be used interchangeably. The end of this step expressed by `Configuring done` message from CMake.
+  - Generate step
+  - Build Step
+
+### Trees
+
 Extracted from http://cgold.readthedocs.io/en/latest/tutorials.html
 - **Directory Tree**
   - [Source Tree](http://cgold.readthedocs.io/en/latest/glossary/binary-tree.html#binary-tree):
   - [Binary Tree](http://cgold.readthedocs.io/en/latest/glossary/binary-tree.html#binary-tree): hierarchy of directories where CMake will store generated files and where native build tool will store it’s temporary files. Directory will contain variables/paths which are **specific to your environment** so they doesn’t mean to be shareable. Top level of the build tree is specified by the global variable
 - **Build Type**
   - [Out-of-source Build](http://cgold.readthedocs.io/en/latest/tutorials/out-of-source.html#out-of-source): Keeping _binary tree_ in a separate directory from _source tree_ is a good practice and called out-of-source build.
-- [**Stages**](http://cgold.readthedocs.io/en/latest/tutorials/cmake-stages.html):
-  - [Configure step](http://cgold.readthedocs.io/en/latest/tutorials/cmake-stages.html#configure-step): parse top level `CMakeLists.txt` of source tree and create **CMakeCache.txt** file with cache variables. For CMake command-line this step is combined with generate step so terms configure and generate will be used interchangeably. The end of this step expressed by `Configuring done` message from CMake.
-  - Generate step
-  - Build Step
+
 
 
 ### CMake's global Variables
