@@ -1,8 +1,10 @@
 # Linux Shells
+csh's syntax resembles C language.
 
 <table>
 <tr>
-<td></td><td>tcsh/csh</td> <td>bash</td>
+<td></td><td><span style="font-weight:bold">tcsh/csh</span></td>
+<td><span style="font-weight:bold">bash</span></td>
 </tr>
 
 <tr>
@@ -14,13 +16,13 @@ Can not be done!!??
 of a line (also called a here document)
 </td>
 <td>
-sed 's/:/ /' <<< $LD_LIBRARY_PATH
+<code>sed 's/:/ /' <<< $LD_LIBRARY_PATH</code>
 </td>
 </tr>
 
 <tr>
 <td>redirect both stdin & stderr to file</td>
-<td> ls >& file </td>
+<td> <code>ls >& file</code> </td>
 <td>
 
 </td>
