@@ -1,16 +1,30 @@
 # Linux Shells
+
 csh's syntax resembles C language.
 
 <table>
 <tr>
-<td></td><td><span style="font-weight:bold">tcsh/csh</span></td>
+<td></td><td><b>tcsh/csh</b></td>
+<td><b>bash</b></td>
+</tr>
+
+<tr>
+<td>Show dir in prompt</td>
+<td>
+<pre lang="shell">
+# %~ the current directory, using ~ for $HOME 
+# %/ the full pathname of the current directory 
+# %c or %. the trailing component of the current directory 
+set prompt='%~ '
+</pre>
+</td>
 <td><span style="font-weight:bold">bash</span></td>
 </tr>
 
 <tr>
 <td>redirect string to stdin</td>
 <td>
-Can not be done!!??
+<b>Can not be done!!??</b>
 
 << string : Take stdin until the next occurrence of 'string' at the beginning
 of a line (also called a here document)
