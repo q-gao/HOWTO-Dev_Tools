@@ -12,9 +12,9 @@ csh's syntax resembles C language.
 <td>Show dir in prompt</td>
 <td>
 <pre lang="shell">
-# %~ the current directory, using ~ for $HOME 
-# %/ the full pathname of the current directory 
-# %c or %. the trailing component of the current directory 
+# %~ the current directory, using ~ for $HOME
+# %/ the full pathname of the current directory
+# %c or %. trailing component of the current dir
 set prompt='%~ '
 </pre>
 </td>
@@ -64,3 +64,29 @@ set var=val
 setenv var value
 
 ```
+
+### Shell Scripting
+
+<table>
+  <tr>
+    <td></td><td><b>csh/tcsh</b></td><td><b>Bash</b></td>
+  </tr>
+  <tr>
+    <td><b>Arguments</b></td>
+    <td>
+    <pre lang="sh">
+$0 # program name
+$1 # 1st argument
+$2 # 2nd argument
+$3 # if it doesn't exist, no error. Just get empty
+
+$#argv     # index of last argument
+$argv[2-]  # 2nd and on argument
+    </pre>
+    </td>
+    <td>
+    <pre lang="perl">
+    </pre>
+    </td>        
+  </tr>
+</table>
