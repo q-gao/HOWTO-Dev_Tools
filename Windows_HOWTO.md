@@ -26,3 +26,9 @@ for %%p in (Dir-1
 	python %JsonPath%\iTJsonSync.py Master\%jsonBaseName% %%p\%jsonBaseName%	
 )
 ```
+
+# Admin
+
+**Check File System**
+
+Open CMD as admin run `SFC /scannow`

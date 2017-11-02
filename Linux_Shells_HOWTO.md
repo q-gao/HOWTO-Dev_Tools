@@ -38,7 +38,7 @@ of a line (also called a here document)
 <td>redirect both stdin & stderr to file</td>
 <td> <code>ls >& file</code> </td>
 <td>
-
+<code>cmd >>file.txt 2>&1 # stderr 2> to the file std is using</code>
 </td>
 </tr>
 

@@ -74,11 +74,11 @@ Extracted from http://cgold.readthedocs.io/en/latest/tutorials.html
 
 ### CMake's global Variables
 
-Global Variable  |  Description
------------------|----------
-`CMAKE_SOURCE_DIR` | Top level dir of the **source tree**. CMake should be run from here.
-`CMAKE_BINARY_DIR` | Top level dir of the **build tree**
-`CMAKE_GENERATOR`  |`set(CMAKE_GENERATOR "Ninja")`
+| Global Variable    | Description                              |
+| ------------------ | ---------------------------------------- |
+| `CMAKE_SOURCE_DIR` | Top level dir of the **source tree**. CMake should be run from here. |
+| `CMAKE_BINARY_DIR` | Top level dir of the **build tree**      |
+| `CMAKE_GENERATOR`  | `set(CMAKE_GENERATOR "Ninja")`           |
 
 ## CMake Commands
 
@@ -87,10 +87,23 @@ Global Variable  |  Description
 message("generator is set to ${CMAKE_GENERATOR}")
 
 ### `find_package`
-CMake searches for package's `.cmake` file under installation **prefix**(i.e., directory. The set of installation **prefixes** is constructed using the following steps: see [here](The set of installation prefixes is constructed using the following steps.)).
+CMake searches for package's `.cmake` file under installation **prefix**(i.e., directory). The set of installation **prefixes** is constructed using the following steps: see [here](https://cmake.org/cmake/help/v3.0/command/find_package.html)).
+
+```shell
+set(OpenCV_DIR "C:/opencv/build")  # <pkg>_DIR
+find_package(OpenCV REQUIRED)
+```
+
+
 
 It has two modes to search for the named package:
 - **Module** mode: search for a file `Find<package>.cmake` in `CMAKE_MODULE_PATH`
 - **Config** mode: search for a file `<name>Config.cmake` or `<lower-case-name>-config.cmake`
 
 ### CMake's Command Line Arguments
+
+```batch
+cd mybuild
+cmake.exe -G"Visual Studio 12 2013" -DOpenCV_DIR="C:/GithubPub/opencv/build" ..
+```
+
