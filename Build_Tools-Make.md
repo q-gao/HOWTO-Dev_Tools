@@ -5,3 +5,4 @@ Multiple ways to specify gcc version to be used:
 - Config compiler in Makefile
 - Alternatively, put `$HOME/bin/` early in your `$PATH` and add a symlink such as `ln -sv /usr/bin/gcc-6 $HOME/bin/gcc`
 - set first priority to gcc-5 `sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 1`
+
