@@ -7,7 +7,11 @@ csh's syntax resembles C language.
 <td></td><td><b>tcsh/csh</b></td>
 <td><b>bash</b></td>
 </tr>
-
+<tr>
+<td>Config File</td>
+<td>.cshrc</td>
+<td>.bashrc</td>
+</tr>
 <tr>
 <td>Show dir in prompt</td>
 <td>
