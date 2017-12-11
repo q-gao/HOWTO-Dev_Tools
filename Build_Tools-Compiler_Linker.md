@@ -1,6 +1,16 @@
-# Compiler
+## Compiler
 
-# Linker
+[Switch between multiple gcc](https://askubuntu.com/questions/26498/choose-gcc-and-g-version)
+```shell
+# the last integer specifies the priority. The larger, the higher priority.
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.3 10
+
+# Interactive I/F to select 
+sudo update-alternatives --config gcc
+sudo update-alternatives --config g++
+```
+
+## Linker
 
 [Linux Static and Dynamic Lib Tutorial](http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html): very easy to follow
 > The fix is to resolve dependencies of (*.so not found)
