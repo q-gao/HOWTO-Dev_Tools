@@ -40,34 +40,35 @@ of a line (also called a here document)
 
 <tr>
 <td>redirect both stdin & stderr to file</td>
-<td> <code>ls >& file</code> </td>
+<td> 
+<pre lang="shell">
+ls >& file
+# re-direct stderr to stdout
+your_program >& /dev/stdout
+# combine stdout and stderr in pipeline's stdin
+your_program |& tee build.log
+</pre> 
+</td>
 <td>
 <code>cmd >>file.txt 2>&1 # stderr 2> to the file std is using</code>
 </td>
 </tr>
-
+<tr>
+<td><span style="font-weight:bold">Variable</span></td>
+<td>
+<pre lang="shell">
+set var=val # ONLY for current shell
+setenv var value # current & any subshells (i.e. it will
+                 # auto export variables to subshell)
+</pre>
+</td>
+<td>
+<pre lang="shell">
+export var=val
+</pre>
+</td>
+</tr>
 </table>
-
-## csh/tcsh
-
-```sh
-# re-direct stderr to stdout
- your_program >& /dev/stdout
-
-# combine stdout and stderr in pipeline's stdin
- your_program |& tee build.log
-
- ```
-
-`set` vs. `setenv`
-* `set` is used for current shell. Use it in your shell script only.
-* `setenv` for current and any subshells (i.e. it will automatically export variables to subshell)
-
-```sh
-set var=val
-setenv var value
-
-```
 
 ### Shell Scripting
 
