@@ -1,7 +1,26 @@
- 
- # Terminal Multiplexer
+<!-- TOC -->
 
- ## tmux
+- [Text/Data Processing](#textdata-processing)
+    - [`sort`](#sort)
+- [Terminal Multiplexer](#terminal-multiplexer)
+    - [tmux](#tmux)
+        - [Issues](#issues)
+            - [Del not working](#del-not-working)
+    - [screen](#screen)
+
+<!-- /TOC -->
+
+# Text/Data Processing
+
+## `sort`
+
+[sort on a column](https://stackoverflow.com/questions/17430470/sort-a-tab-delimited-file-based-on-column-sort-command-bash)
+- `-k`: key
+- `-V`: numerical
+
+# Terminal Multiplexer
+
+## tmux
 
 `.tmux.conf`:
 ```sh
