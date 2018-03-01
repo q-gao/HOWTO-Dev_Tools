@@ -16,6 +16,7 @@ To Class View | `CTRL+SHIFT+C`
 To Solution Explorer | `CTRL+ALT+L`
 Select current doc in Solution Explorer | `CTRL+[+S`
 From Solution Explorer to editor| `ESC`
+Block Select | `ALT` + `SHIFT` + `ARROW`
 
 ## Lib/DLL
 
