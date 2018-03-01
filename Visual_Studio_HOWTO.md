@@ -1,5 +1,12 @@
 # Visual Studio HOWTO
 
+## Macros
+
+```c++
+_WIN32
+_MSC_VER // see https://stackoverflow.com/questions/70013/how-to-detect-if-im-compiling-code-with-visual-studio-2008
+```
+
 ## Common Shortcuts
 
 Purpose  |  Shortcut
