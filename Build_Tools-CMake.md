@@ -15,7 +15,7 @@
 
 <!-- /TOC -->
 
-# [![alt](https://cmake.org/wp-content/uploads/2014/06/cmake_logo-main.png)](http://cmake.org)
+[![alt](https://cmake.org/wp-content/uploads/2014/06/cmake_logo-main.png)](http://cmake.org)
 
 CMake is a cross-platform build system generator. Projects specify their build process with platform-independent **CMake listfiles** included in each directory of a source tree with the name `CMakeLists.txt`
 
