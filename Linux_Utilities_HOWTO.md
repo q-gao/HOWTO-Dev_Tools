@@ -23,6 +23,20 @@
 ## tmux
 
 `.tmux.conf`:
+
+```sh
+# attach to a session
+tmux a -t <session_name>
+```
+
+|Shortcut| Meaning|
+|----|---|
+|`^B d`|detach|
+|`^B "`|split horizontally|
+|`^B %`|split vertically|
+|`^B x`|kill current panel|
+|`^B q`|show window index in current panel?|
+
 ```sh
 # Use Ctrl-a as prefix (like in screen)
 unbind C-b
@@ -42,9 +56,9 @@ https://github.com/tmux/tmux/issues/335
 
 ## screen
  
- # Misc
- ## Send email in Shell
- ```shell
- echo "hello world" | mail -s "a subject" someone@somewhere.com
- cat /path/to/file | mail -s "your subject" your@email.com
- ```
+# Misc
+## Send email in Shell
+```shell
+echo "hello world" | mail -s "a subject" someone@somewhere.com
+cat /path/to/file | mail -s "your subject" your@email.com
+```

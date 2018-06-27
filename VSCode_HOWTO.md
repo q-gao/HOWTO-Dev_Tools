@@ -51,5 +51,5 @@ Show Tool Palette | `CTRL+SHIFT+P`
 Purpose  |  Shortcut
 ---------|----------
 `CTRL+M` `T` | Create/Update Table of Contents
-`CTRL+SHIFT+M` | Open **Makedown Preview Enhanced** preview
+`CTRL+k v` | Open **Makedown Preview Enhanced** preview
 `CTRL+SHIFT+S` | Synch **Makedown Preview Enhanced** preview
