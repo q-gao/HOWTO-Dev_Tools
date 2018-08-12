@@ -17,6 +17,79 @@
 
 [![alt](https://cmake.org/wp-content/uploads/2014/06/cmake_logo-main.png)](http://cmake.org)
 
+# Quick Pick-up
+
+## Variables
+
+### cmake built-in variables
+
+```cmake
+#
+-DCMAKE_BUILD_TYPE=Release
+
+# passed to compiler
+cmake -DCMAKE_CXX_FLAGS="..."
+cmake -DCMAKE_C_FLAGS="..."
+```
+#### Check environments
+```cmake
+if( NOT MSVC )
+	include_directories("D:/code/fftw-3.3.8/api")
+	link_directories("D:/code/fftw-3.3.8/build_android")
+
+	add_executable(2dfft
+	               simple_example.c
+	)
+	target_link_libraries(2dfft fftw3)
+endif()
+```
+
+### User defined variables
+
+```cmake
+# set vs. option
+set (CMAKE_BUILD_TYPE Release CACHE STRING "Build type")
+option (BUILD_SHARED_LIBS "Build shared libraries" OFF)
+```
+
+```cmake
+if(DEBUG_LEVEL_INFO_MEDIUM)
+	add_definitions(-DDEBUG_LEVEL_INFO_MEDIUM)
+endif(DEBUG_LEVEL_INFO_MEDIUM)
+```
+
+## Command
+
+```cmake
+# macro definition of preprocessor
+add_definitions(-DDEBUG_LEVEL_INFO_MEDIUM)
+
+# include and lib dir's
+include_directories("D:/code/fftw-3.3.8/api")
+link_directories("D:/code/fftw-3.3.8/build_android")
+
+# specify exe dependency
+add_executable(2dfft
+               simple_example.c
+)
+target_link_libraries(2dfft fftw3)
+
+# specify lib dependency
+add_library(hdrplus
+    EstMotion.cpp    
+    MergeImg.cpp
+)
+```
+### Advanced
+
+```cmake
+include(GNUInstallDirs)
+
+include (CheckIncludeFile)
+check_include_file (alloca.h         HAVE_ALLOCA_H)
+```
+
+# Introduction
 CMake is a cross-platform build system generator. Projects specify their build process with platform-independent **CMake listfiles** included in each directory of a source tree with the name `CMakeLists.txt`
 
 Good Tutorial
