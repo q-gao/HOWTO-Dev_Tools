@@ -23,7 +23,14 @@
 -v ~/nginxlogs:/var/log/nginx
 ```
 
+### Container vs. Virtual Machine
+[Illustrations](https://nickjanetakis.com/blog/comparing-virtual-machines-vs-docker-containers)
 
+Virtual machines have a full OS with its own memory management installed with the associated overhead of virtual device drivers. In a virtual machine, valuable resources are emulated for the guest OS and hypervisor, which makes it possible to run many instances of one or more operating systems in parallel on a single machine (or host). 
+
+On the other hand Docker containers are executed with the Docker engine rather than the hypervisor. Containers are therefore smaller than Virtual Machines and enable faster start up with better performance, less isolation and greater compatibility possible due to sharing of the host’s kernel.
+
+There is one key metric where Docker Containers are weaker than Virtual Machines, and that’s “**Isolation**”. Intel’s VT-d and VT- x technologies have provided Virtual Machines with ring-1 hardware isolation of which, it takes full advantage. It helps Virtual Machines from breaking down and interfering with each other. Docker Containers yet don’t have any hardware isolation, thus making them receptive to exploits.
 
 ## Examples
 
