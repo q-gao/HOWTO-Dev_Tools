@@ -24,6 +24,8 @@
 
 `.tmux.conf`:
 
+[tmux cheetsheet](https://gist.github.com/MohamedAlaa/2961058)
+
 ```sh
 # attach to a session
 tmux a -t <session_name>
