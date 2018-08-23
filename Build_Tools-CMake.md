@@ -1,6 +1,14 @@
 <!-- TOC -->
 
-- [[![alt](https://cmake.org/wp-content/uploads/2014/06/cmake_logo-main.png)](http://cmake.org)](#althttpscmakeorgwp-contentuploads201406cmake_logo-mainpnghttpcmakeorg)
+- [Quick Pick-up](#quick-pick-up)
+    - [Generate `ninja` rules for different compiler](#generate-ninja-rules-for-different-compiler)
+    - [Variables](#variables)
+        - [cmake built-in variables](#cmake-built-in-variables)
+            - [Check environments](#check-environments)
+        - [User defined variables](#user-defined-variables)
+    - [Command](#command)
+        - [Advanced](#advanced)
+- [Introduction](#introduction)
     - [Command Line](#command-line)
     - [Concepts](#concepts)
         - [Targets](#targets)
@@ -18,6 +26,41 @@
 [![alt](https://cmake.org/wp-content/uploads/2014/06/cmake_logo-main.png)](http://cmake.org)
 
 # Quick Pick-up
+
+[Quick intro on StackOverflow](https://stackoverflow.com/questions/17511496/how-to-create-a-shared-library-with-cmake)
+> CRITICAL: generator has been detected ONLY after **`project`** statement
+
+## Generate `ninja` rules for different compiler
+
+Steps:
+- First specify the compiler and linkers
+- Generate ninja rules
+
+```shell
+set CMAKE=C:\Apps\Android\sdk\cmake\3.6.4111459\bin\cmake.exe
+set  MAKE=C:\Apps\Android\sdk\cmake\3.6.4111459\bin\ninja.exe
+set ANDROID_NDK_HOME=C:\Apps\Android\sdk\ndk-bundle
+REM need to install cmake from Android SDK Manager
+set CMAKE_TC=%ANDROID_NDK_HOME%\build\cmake\android.toolchain.cmake
+
+%CMAKE% -DCMAKE_BUILD_TYPE=Release^
+        -DCMAKE_TOOLCHAIN_FILE=%CMAKE_TC%^
+        -DANDROID_ABI=arm64-v8a^
+        -DCMAKE_MAKE_PROGRAM=%MAKE%^
+        -G Ninja^
+        ..
+```
+
+```batch
+call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x64 
+
+set  MAKE=C:\Apps\Android\sdk\cmake\3.6.4111459\bin\ninja.exe
+
+cmake -DCMAKE_BUILD_TYPE=Release^
+        -DCMAKE_MAKE_PROGRAM=%MAKE%^
+        -G Ninja^
+        ..
+```
 
 ## Variables
 
@@ -56,7 +99,7 @@ option (BUILD_SHARED_LIBS "Build shared libraries" OFF)
 if(DEBUG_LEVEL_INFO_MEDIUM)
 	add_definitions(-DDEBUG_LEVEL_INFO_MEDIUM)
 endif(DEBUG_LEVEL_INFO_MEDIUM)
-```
+``` 
 
 ## Command
 
