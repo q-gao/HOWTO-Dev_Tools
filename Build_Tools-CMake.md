@@ -29,8 +29,11 @@
 
 [Quick intro on StackOverflow](https://stackoverflow.com/questions/17511496/how-to-create-a-shared-library-with-cmake)
 > CRITICAL: generator has been detected ONLY after **`project`** statement
+## CMake with Visual Studio
+[Excellent doc on CMake, Visual Studio, and the Command Line](https://dmerej.info/blog/post/cmake-visual-studio-and-the-command-line/)
+> Summary: use ninja to build with VS 
 
-## Generate `ninja` rules for different compiler
+## Generate `ninja` rules for different compilers
 
 Steps:
 - First specify the compiler and linkers

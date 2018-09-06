@@ -1,3 +1,5 @@
+
+
 # Docker Notes
 
 [anaconda docker images](https://medium.com/@patrickmichelberger/getting-started-with-anaconda-docker-b50a2c482139)
@@ -106,3 +108,10 @@ docker build -t <tag-name> # take Dockerfile as input, -t: tag name
 ### Windows Container
 
 [Windows container instruction by MS](https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/quick-start-windows-10#3-install-base-container-images): 
+
+
+# Deep Learning with Docker
+Use nvidia-docker to enable GPU in container
+> [nvidia docker plugin?](https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin)
+
+[More details at hackernoon](https://hackernoon.com/docker-compose-gpu-tensorflow-%EF%B8%8F-a0e2011d36)
