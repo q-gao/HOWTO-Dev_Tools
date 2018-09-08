@@ -1,4 +1,20 @@
+<!-- TOC -->
 
+- [Docker Notes](#docker-notes)
+    - [Docker Concepts](#docker-concepts)
+        - [Images and Containers](#images-and-containers)
+            - [Export/Import, Save/Load and Commit Images](#exportimport-saveload-and-commit-images)
+            - [Image & Container Layers](#image--container-layers)
+            - [Docker storage driver](#docker-storage-driver)
+        - [`bindmount` to access host file system](#bindmount-to-access-host-file-system)
+        - [Container vs. Virtual Machine](#container-vs-virtual-machine)
+    - [Examples](#examples)
+        - [More `run` examples](#more-run-examples)
+        - [Build images](#build-images)
+        - [Windows Container](#windows-container)
+- [Deep Learning with Docker](#deep-learning-with-docker)
+
+<!-- /TOC -->
 
 # Docker Notes
 
@@ -10,12 +26,32 @@
 
 ​	- Docker daemon and client
 
-### Images
+### Images and Containers
 
 - **Base images**: have no parent image, usually images with an OS like ubuntu, busybox or debian 
 - **Child images**: build on base images and add additional functionality 
 
+#### Export/Import, Save/Load and Commit Images
+[See explanation](https://sysadminnightmare.org/docker-save-load-import-export-commit/)
+
 `docker commit` to commit changes and save a new image. See [example](https://blog.codeship.com/using-docker-commit-to-create-and-change-an-image/)
+
+#### Image & Container Layers
+[See explanation](https://medium.com/@jessgreb01/digging-into-docker-layers-c22f948ed612)
+- When Docker builds the container from a *Dockerfile*, each step corresponds to a command run in the Dockerfile. 
+- Each layer is made up of the file generated from running that command. 
+- A container has a *writeable* layer that stacks on top of the image layers. This writeable layer allows you to “make changes” to the container 
+
+Use `docker history <image_name>` to view image layers
+
+#### Docker storage driver
+
+It uses a **Union Mount** system to implement image layers. Union mount is a way of combining numerous directories into one directory that looks like it contains the content from all the them.
+>- merge all the files for each image layer together and presents them as one single read-only directory at the _union mount point_.
+>- Each **image layer** is called a branch
+
+This is illustrated below.
+![alt](https://docs.docker.com/storage/storagedriver/images/aufs_layers.jpg) 
 
 ### `bindmount` to access host file system
 
