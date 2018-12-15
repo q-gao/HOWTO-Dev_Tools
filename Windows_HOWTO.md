@@ -7,6 +7,7 @@ rem get argument number
 set argNum=0
 for %%x in (%*) do Set /A argNum+=1
 
+REM see https://ss64.com/nt/if.html for operators
 if %argNum% GTR 0 (
 	set JsonPath= %1
  else (
