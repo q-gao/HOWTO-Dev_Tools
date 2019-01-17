@@ -53,12 +53,19 @@ It uses a **Union Mount** system to implement image layers. Union mount is a way
 This is illustrated below.
 ![alt](https://docs.docker.com/storage/storagedriver/images/aufs_layers.jpg) 
 
-### `bindmount` to access host file system
+### Host-Container Data Sharing 
+`bindmount` to access host file system
 
 [see here](https://www.digitalocean.com/community/tutorials/how-to-share-data-between-the-docker-container-and-the-host)
 
 ```shell
+# binmount volumn
 -v ~/nginxlogs:/var/log/nginx
+```
+
+*docker cp*
+```shell
+docker cp index.html <container_name>:/container/path
 ```
 
 ### Container vs. Virtual Machine
@@ -86,7 +93,7 @@ docker image
 docker rmi  # remove images
 
 # run container
-docker run -it ubuntu bash  # -it == interactive tty
+docker run --name=<name> -it ubuntu bash  # -it == interactive tty
 docker run --rm -it hello-world # --rm :  auto delete container once it's exited
 
 # show all running containers
