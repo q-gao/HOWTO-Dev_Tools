@@ -19,6 +19,12 @@ $
 *git ssh*
 
 ```shell
+# generate SSH public/private key pair and save it in <home>/.ssh
+ssh-keygen
+
+# copy public key to server
+ssh-copy-id  user@server
+
 git remote add origin ssh://user@server:/GitRepos/myproject.git
 git push origin master
 ```
