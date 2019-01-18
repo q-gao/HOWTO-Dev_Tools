@@ -15,3 +15,10 @@ index bd659c4..7913fc2 100644
 +
 $
 ```
+
+*git ssh*
+
+```shell
+git remote add origin ssh://user@server:/GitRepos/myproject.git
+git push origin master
+```
