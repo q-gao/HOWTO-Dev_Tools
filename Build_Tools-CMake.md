@@ -226,3 +226,73 @@ cd mybuild
 cmake.exe -G"Visual Studio 12 2013" -DOpenCV_DIR="C:/GithubPub/opencv/build" ..
 ```
 
+## CMake Control
+
+```cmake
+    # see https://stackoverflow.com/questions/4346412/how-to-prepend-all-filenames-on-the-list-with-common-path
+    # for function definitions
+    set(CDM_FULLPATH_SRCS "")
+    set(CDM_OBJS "")
+    foreach(f ${CDM_SRCS_BASE})
+        list( APPEND CDM_FULLPATH_SRCS ${CDM_DIR}/${f}.cpp)
+        list( APPEND CDM_OBJS ${BINDIR}/${f}.o)
+    endforeach(f)
+
+set( PXL_CMP_LUA_OBJS "" )
+foreach( f ${PXL_CMP_LUA_SRCS} )
+    get_filename_component(b ${f} NAME_WE)
+    list( APPEND PXL_CMP_LUA_OBJS  ${BINDIR}/${b}.o )
+endforeach(f)
+```
+## CMake Functions
+
+```cmake
+FUNCTION(BASENAME results)
+    # same as makefile's basename function
+    set( listVar "" )
+    FOREACH(f ${ARGN})
+        get_filename_component(d ${f} DIRECTORY)
+        get_filename_component(b ${f} NAME_WE)
+        LIST(APPEND listVar "${d}/${b}")
+    ENDFOREACH(f)    
+    SET(${results} "${listVar}" PARENT_SCOPE)
+ENDFUNCTION(BASENAME)
+
+# BASENAME( bn a/b.cpp a2/b2.c)
+# message(FATAL_ERROR  "BASENAME: ${bn}")
+
+FUNCTION(FILENAMES_EXT_TO newList newExt)
+    BASENAME(bnms ${ARGN})
+    set( listVar "" )
+    FOREACH(b ${bnms})
+        LIST(APPEND listVar "${b}.${newExt}")
+    ENDFOREACH(b)
+    SET(${newList} "${listVar}" PARENT_SCOPE)
+ENDFUNCTION(FILENAMES_EXT_TO)
+
+FUNCTION(FILENAMES_RM_DIR_EXT_TO newList newExt)
+    SET(listVar "")
+    FOREACH(f ${ARGN})
+        get_filename_component(b ${f} NAME_WE)
+        LIST(APPEND listVar "${b}.${newExt}")
+    ENDFOREACH(f)
+    SET(${newList} "${listVar}" PARENT_SCOPE)
+ENDFUNCTION(FILENAMES_RM_DIR_EXT_TO)
+
+FUNCTION(PREPEND_DIR var prefix)
+   SET(listVar "")
+   FOREACH(f ${ARGN})
+      LIST(APPEND listVar "${prefix}/${f}")
+   ENDFOREACH(f)
+   SET(${var} "${listVar}" PARENT_SCOPE)
+ENDFUNCTION(PREPEND_DIR)
+
+if(NOT DEFINED WORKDIR)
+    if( ${CMAKE_SYSTEM_NAME} MATCHES "Linux" )
+        execute_process( COMMAND getworkdir -v -fast OUTPUT_VARIABLE WORKDIR )
+    else()
+        set(WORKDIR $ENV{WORKDIR})
+    endif()
+endif()
+```
+
