@@ -158,3 +158,6 @@ Use nvidia-docker to enable GPU in container
 > [nvidia docker plugin?](https://github.com/NVIDIA/nvidia-docker/wiki/nvidia-docker-plugin)
 
 [More details at hackernoon](https://hackernoon.com/docker-compose-gpu-tensorflow-%EF%B8%8F-a0e2011d36)
+
+[nVidia docker images](https://hub.docker.com/r/nvidia/cuda/)
+- For Centos: https://hub.docker.com/r/nvidia/cuda/tags?page=1&name=centos7
