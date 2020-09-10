@@ -162,16 +162,8 @@ Use nvidia-docker to enable GPU in container
 [nVidia docker images](https://hub.docker.com/r/nvidia/cuda/)
 - For Centos: https://hub.docker.com/r/nvidia/cuda/tags?page=1&name=centos7
 
-From https://docs.nvidia.com/deeplearning/frameworks/user-guide/index.html
+From [nvidia-docker github wiki](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#i-have-multiple-gpu-devices-how-can-i-isolate-them-between-my-containers)
 ```sh
-# Use docker run --gpus to run GPU-enabled containers.
-# Example using all GPUs:
-$ docker run --gpus all ...
-
-# Example using two GPUs:
-$ docker run --gpus 2 ...
-
-# Examples using specific GPUs:
-$ docker run --gpus "device=1,2" ...
-$ docker run --gpus "device=UUID-ABCDEF,1" ...
+# If you have 4 GPUs, to isolate GPUs 3 and 4 (/dev/nvidia2 and /dev/nvidia3)
+$ docker run --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=2,3 nvidia/cuda:10.0-base nvidia-smi
 ```
