@@ -161,3 +161,17 @@ Use nvidia-docker to enable GPU in container
 
 [nVidia docker images](https://hub.docker.com/r/nvidia/cuda/)
 - For Centos: https://hub.docker.com/r/nvidia/cuda/tags?page=1&name=centos7
+
+From https://docs.nvidia.com/deeplearning/frameworks/user-guide/index.html
+```sh
+# Use docker run --gpus to run GPU-enabled containers.
+# Example using all GPUs:
+$ docker run --gpus all ...
+
+# Example using two GPUs:
+$ docker run --gpus 2 ...
+
+# Examples using specific GPUs:
+$ docker run --gpus "device=1,2" ...
+$ docker run --gpus "device=UUID-ABCDEF,1" ...
+```
