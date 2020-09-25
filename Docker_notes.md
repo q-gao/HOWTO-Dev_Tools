@@ -102,13 +102,15 @@ docker run --rm -it hello-world # --rm :  auto delete container once it's exited
 
 # show all running containers
 docker ps # switch -a
+# output with selected fields
+# see https://theforgetful.dev/posts/docker-ps-output-too-wide/
+alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"'
 
 # clean up containers that are no longer needed to save disk space
 docker rm <container_id>  # use "docker ps -a" to find container ID
 # -q: only return numeric ID
 # -f: filter
 docker rm $(docker ps -a -q -f status=exited)  
-
 ```
 ### More `run` examples
 
