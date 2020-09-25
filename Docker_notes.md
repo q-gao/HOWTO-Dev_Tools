@@ -35,6 +35,10 @@
 [See explanation](https://sysadminnightmare.org/docker-save-load-import-export-commit/)
 
 `docker commit` to commit changes and save a new image. See [example](https://blog.codeship.com/using-docker-commit-to-create-and-change-an-image/)
+```sh
+# Save a container as a new image
+docker commit <DOCKER_ID>  YOUROWN_DOCKER_IMAGE_NAME
+```
 
 #### Image & Container Layers
 [See explanation](https://medium.com/@jessgreb01/digging-into-docker-layers-c22f948ed612)
