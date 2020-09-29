@@ -105,6 +105,7 @@ docker ps # switch -a
 # output with selected fields
 # see https://theforgetful.dev/posts/docker-ps-output-too-wide/
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"'
+alias dimgs='docker images --format "table {{.Repository}}\t{{.Tag}}\t{{.ID}}"'
 
 # clean up containers that are no longer needed to save disk space
 docker rm <container_id>  # use "docker ps -a" to find container ID
