@@ -30,6 +30,8 @@
 
 - **Base images**: have no parent image, usually images with an OS like ubuntu, busybox or debian 
 - **Child images**: build on base images and add additional functionality 
+> [Find a child image's base image](https://stackoverflow.com/questions/58018422/how-to-find-out-the-base-image-for-a-docker-image)
+
 
 #### Export/Import, Save/Load and Commit Images
 [See explanation](https://sysadminnightmare.org/docker-save-load-import-export-commit/)
