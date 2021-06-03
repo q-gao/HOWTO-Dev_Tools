@@ -86,6 +86,7 @@ useradd -rm -d /home/test -s /bin/bash -g root -G sudo -u 1000 test
 echo 'test:test' | chpasswd
 ```
 - You can now use `ssh -p <mapped_ssh_port> <host_ip>` to SSH to the container. Note that use the **host’s IP addres**s, not the container’s IP address that is not externally accessible (you can find that by `docker inspect -f "{{ .NetworkSettings.IPAddress }}" *Container_Name*`).
+  - NOTE that the container can not use host networking mode as it will prevent port mapping from working. See [explanation at Docker](https://docs.docker.com/network/host/) 
 - Enable root remote login if you want to login as `root` to the container (see [here](https://medium.com/@leicao.me/how-to-ssh-into-a-docker-container-remotely-as-root-or-a-non-root-user-b2105c797273))
 ```sh
 sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
