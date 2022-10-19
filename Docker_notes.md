@@ -47,6 +47,15 @@ docker commit <DOCKER_ID>  YOUROWN_DOCKER_IMAGE_NAME
 - When Docker builds the container from a *Dockerfile*, each step corresponds to a command run in the Dockerfile. 
 - Each layer is made up of the file generated from running that command. 
 - A container has a *writeable* layer that stacks on top of the image layers. This writeable layer allows you to “make changes” to the container 
+  - Docker maintains stopped container in case you want to restart or save it. Use the following to show all containers
+  ```sh
+  docker ps -a
+  ```
+  - `docker commit` to commit changes and save a new image. See [example](https://blog.codeship.com/using-docker-commit-to-create-and-change-an-image/)
+```sh
+# Save a container as a new image
+docker commit <DOCKER_ID>  YOUROWN_DOCKER_IMAGE_NAME
+```
 
 Use `docker history <image_name>` to view image layers
 
@@ -65,7 +74,7 @@ This is illustrated below.
 [see here](https://www.digitalocean.com/community/tutorials/how-to-share-data-between-the-docker-container-and-the-host)
 
 ```shell
-# binmount volumn
+# bindmount volumn
 -v ~/nginxlogs:/var/log/nginx
 ```
 
@@ -95,7 +104,7 @@ docker pull ubuntu:14.04  # :<tag> to specify a version
 docker pull python:2.7 # see https://hub.docker.com/_/python/
 
 # list installed images
-docker image
+docker image ls
 docker rmi  # remove images
 
 # run container
