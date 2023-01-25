@@ -95,3 +95,13 @@ $argv[2-]  # 2nd and on argument
     </td>        
   </tr>
 </table>
+
+[zsh script](https://linuxhint.com/for-loops-zsh-script/)
+```sh
+for i in {0..22}
+do
+  python restore_image.py -i ~/Downloads/EE88_$i.png \
+      -c training_results/snap_distill_noCL_pureNoise_allResidual_08_17.build_distillation_generator_3c.last.ckpt \
+      -o .
+done
+```
