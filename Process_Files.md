@@ -6,9 +6,13 @@
 
 ## `find`
 Get the total size of a list of files: 'c' passed to du = accumulation?
-what `+` used for?
+
 ```sh
+# +: all files in the same command execution
 find ./photos/john_doe -type f -name '*.jpg' -exec du -ch {} + | grep total$
+# \; one file per command execution
+find ./photos/john_doe -type f -name '*.jpg' -exec du -ch {} \; | grep total$
+find . -name '*_lq.jpg' -exec mv {} ../Full_LQ \;
 ```
 
 ## Get File Info
